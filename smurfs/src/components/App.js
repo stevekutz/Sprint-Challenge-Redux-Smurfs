@@ -60,14 +60,19 @@ class App extends Component {
           backgroundImage: "url(http://www.digitaltrends.com/wp-content/uploads/2011/02/smurfs-village-ipad-game.jpg)",
           backgroundPosition: 'center',
           backgroundSize: 'cover',
+   //       backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
           width: '90%',
           margin: "5px auto",
           position: "absolute",
           zIndex : "-1",
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
 
         }}>
-        >
+
 
         <form onSubmit = {this.handleSubmit}>
           <div className = "smurfFormInputs">

@@ -40,15 +40,14 @@ export default (state = initialState, action) => {
       return {
         ...state,
         error: '',
-        fetchingData: true,
+        fetchingSmurfs: true,
       };
     case FETCH_DATA_SUCCESS:
       return {
         ...state,
         error: '',
-        fetchingData: false,
-        isLoggingIn: false,
-        friends: action.payload,
+        fetchingSmurfs: false,
+        smurfs: action.payload,
       };
 
     case ERROR:

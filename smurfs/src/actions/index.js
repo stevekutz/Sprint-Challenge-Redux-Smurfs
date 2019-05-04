@@ -13,3 +13,35 @@
    U - updateSmurf
    D - deleteSmurf
 */
+
+/*
+  FETCH_DATA_START,
+  FETCH_DATA_SUCCESS,
+//  FETCH_DATA_FAILURE,   // use ONLU ERROR for all cases
+  ERROR,
+ */
+
+import axios from 'axios';
+
+export const FETCH_DATA_START = "FETCH_DATA_START";
+export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
+
+export const ERROR = "ERROR";
+
+
+
+// FOLLOW PATTERN for action creators !!!!! WATCH ENDPOINTS !!!
+export const fetchSmurfs = () => dispatch => {
+  dispatch({type: FETCH_DATA_START});
+  axios
+    .get(`http://localhost:3333/smurfs`)
+    .then(res => {
+      dispatch({
+        type: FETCH_DATA_SUCCESS,
+        payload: res.data,
+      })
+    .catch(err => {
+      dispatch({type: ERROR, payload: err.response})
+    })
+  })
+};

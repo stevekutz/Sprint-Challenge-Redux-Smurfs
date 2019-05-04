@@ -81,7 +81,7 @@ export default (state = initialState, action) => {
         ...state,
         deletingSmurf: false,
         smurfs: action.payload,
-        
+
       };
 
 

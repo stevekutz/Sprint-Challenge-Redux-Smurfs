@@ -114,9 +114,9 @@ class App extends Component {
               className = "smurfItem"
               key = {index}
             >
-              <h4> {smurf.name}</h4>
-              <h4> {smurf.age}</h4>
-              <h4> {smurf.height}</h4>
+              <h4> Name: {smurf.name}</h4>
+              <h4> Age: {smurf.age}</h4>
+              <h4> Height: {smurf.height}</h4>
               <button
                 onClick = { e => this.handleDelete(e, smurf.id)}
               > Delete the smurf with that id </button>

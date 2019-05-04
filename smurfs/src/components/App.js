@@ -9,7 +9,7 @@ import './App.css';
 
 
 import {connect} from 'react-redux';
-
+import {fetchSmurfs} from '../actions';
 
 class App extends Component {
   state = {
@@ -19,22 +19,85 @@ class App extends Component {
 
   };
 
+  componentDidMount() {
+    this.props.fetchSmurfs();
+  }
 
+  // handers
 
+  handleChange = e => {
+    e.preventDefault();
+    this.setState({[e.target.name]: e.target.value})
+    //   this.setState({newTodo: e.target.value})
+  };
 
+  handleSubmit = e => {
+    const {name, age, height} = this.state;
+    e.preventDefault();
 
+    // must fill in ALL fields !!!
+    if(name && age && height) {
+      this.props.addFriend({name, age, height});
+      this.setState({
+        name: '',
+        age: '',
+        height: ''
+      });
+    }
+
+  };
 
 
   render() {
     return (
-      <div className="smurfContainer">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to your Redux version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
+
+      <div
+        style={{
+          backgroundImage: "url(http://www.digitaltrends.com/wp-content/uploads/2011/02/smurfs-village-ipad-game.jpg)",
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          width: '90%',
+          margin: "5px auto",
+
+        }}>
+        >
+
+        <div className="smurfContainer">
+          <h2>SMURFS with REDUX !!!</h2>
+
+
+
+
+
+
+        </div>
+
       </div>
+
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  smurfs: state.smurfs,
+  fetchingSmurfs: state.fetchingSmurfs,
+
+  error: state.error,
+
+});
+
+
+export default connect(mapStateToProps, {fetchSmurfs, })(App);
+
+
+/*
+const initialState = {
+  smurfs: [],
+  fetchingSmurfs: false,
+  addingSmurf: false,
+  updatingSmurf: false,
+  deletingSmurf: false,
+  error: null,
+};
+ */

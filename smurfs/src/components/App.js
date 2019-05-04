@@ -9,7 +9,7 @@ import './App.css';
 
 
 import {connect} from 'react-redux';
-import {fetchSmurfs} from '../actions';
+import {fetchSmurfs, addSmurf} from '../actions';
 
 class App extends Component {
   state = {
@@ -129,13 +129,13 @@ class App extends Component {
 const mapStateToProps = state => ({
   smurfs: state.smurfs,
   fetchingSmurfs: state.fetchingSmurfs,
-
+  addingSmurf: state.addingSmurf,
   error: state.error,
 
 });
 
 
-export default connect(mapStateToProps, {fetchSmurfs, })(App);
+export default connect(mapStateToProps, {fetchSmurfs, addSmurf})(App);
 
 
 /*

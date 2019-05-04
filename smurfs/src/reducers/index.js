@@ -17,6 +17,10 @@ import {
   FETCH_DATA_START,
   FETCH_DATA_SUCCESS,
 //  FETCH_DATA_FAILURE,   // use ONLU ERROR for all cases
+  ADDING_SMURF,
+  ADD_SMURF,
+
+
   ERROR,
 
 
@@ -49,6 +53,23 @@ export default (state = initialState, action) => {
         fetchingSmurfs: false,
         smurfs: action.payload,
       };
+
+    case ADDING_SMURF:
+      return {
+        ...state,
+        addingSmurf: true,
+
+      };
+    case ADD_SMURF:
+      return {
+        ...state,
+        addingSmurf: false,
+        smurfs: action.payload
+      };
+
+
+
+
 
     case ERROR:
       return {

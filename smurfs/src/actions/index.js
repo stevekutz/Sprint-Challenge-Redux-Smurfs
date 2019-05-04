@@ -35,8 +35,9 @@ export const DELETE_SMURF = "DELETE_SMURF";
 export const ERROR = "ERROR";
 
 
-/*   BREAKS !!!
+ //  BREAKS !!!
 // FOLLOW PATTERN for action creators !!!!! WATCH ENDPOINTS !!!
+/*
 export const fetchSmurfs = () => dispatch => {
   dispatch({type: FETCH_DATA_START});
   axios
@@ -45,18 +46,40 @@ export const fetchSmurfs = () => dispatch => {
       dispatch({
         type: FETCH_DATA_SUCCESS,
         payload: res.data,
-      })
+      })      // HERE IS BREAK
+
+
     .catch(err => {
       dispatch({type: ERROR, payload: err})
     })
   })
 };
- */
+*/
 
+/*
+// WORKS , note syntax
+export const fetchSmurfs = () => dispatch => {
+  dispatch({type: FETCH_DATA_START});
+  axios
+    .get(`http://localhost:3333/smurfs`)
+    .then(res => {
+      dispatch({
+        type: FETCH_DATA_SUCCESS,
+        payload: res.data,
+      })      // HERE IS BREAK
+    })
+
+   .catch(err => {
+      dispatch({type: ERROR, payload: err})
+   })
+};
+*/
 
 
 export const fetchSmurfs = () => dispatch => {
-  dispatch({ type: FETCH_DATA_START });
+  dispatch({
+    type: FETCH_DATA_START
+  });
   axios // NOTICE DIFFERENT ENDPOINT !!!!!
     .get(`http://localhost:3333/smurfs`)
     .then(res => {
@@ -66,7 +89,10 @@ export const fetchSmurfs = () => dispatch => {
       });
     })
     .catch(err => {
-      dispatch({ type: ERROR, payload: err.response });
+      dispatch({
+        type: ERROR,
+        payload: err.response
+      });
     });
 };
 
@@ -130,7 +156,7 @@ export const deleteSmurf = (id) => dispatch => {
     .delete(`http://localhost:3333/smurfs/${id}`)
     .then(res => {
       dispatch({
-        type: ADD_SMURF,
+        type: DELETE_SMURF,
         payload: res.data
       });
     })

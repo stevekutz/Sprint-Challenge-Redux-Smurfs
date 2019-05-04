@@ -20,6 +20,8 @@ import {
   ADDING_SMURF,
   ADD_SMURF,
 
+  DELETING_SMURF,
+  DELETE_SMURF,
 
   ERROR,
 
@@ -67,8 +69,20 @@ export default (state = initialState, action) => {
         smurfs: action.payload
       };
 
+    case DELETING_SMURF:
+      return {
+        ...state,
+        deletingSmurf: true,
 
+      };
 
+    case DELETE_SMURF:
+      return {
+        ...state,
+        deletingSmurf: false,
+        smurfs: action.payload,
+        
+      };
 
 
     case ERROR:

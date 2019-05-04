@@ -86,7 +86,7 @@ export function fetchSmurfs() {
  */
 
 
-/*
+/*                              =>   HA !!!
 export const addSmurf = (smurf) = dispatch => {
   dispatch({type: ADDING_SMURF});
   axios
@@ -104,11 +104,11 @@ export const addSmurf = (smurf) = dispatch => {
 };
 */
 
+
 export const addSmurf = (smurf) => dispatch => {
   dispatch({type: ADDING_SMURF});
   axios
     .post(`http://localhost:3333/smurfs`, smurf)
-
     .then(res => {
       dispatch({
         type: ADD_SMURF,

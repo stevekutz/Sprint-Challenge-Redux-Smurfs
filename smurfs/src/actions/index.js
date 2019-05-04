@@ -138,3 +138,4 @@ export const deleteSmurf = (id) => dispatch => {
       dispatch({type: ERROR, payload: err.response});
     })
 };
+

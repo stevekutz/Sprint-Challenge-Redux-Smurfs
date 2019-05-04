@@ -1,5 +1,7 @@
 .smurfContainer {
   border: 4px solid deeppink;
+  background-color: aliceblue;
+  opacity: .85;
   margin: 2px auto;
   display: flex;
   width: 60%;
@@ -7,15 +9,15 @@
   align-content: center;
   align-items: center;
   justify-content: center;
-
-
+  position: relative;
+  z-index: -1;
 
 }
 
 .smurfItem {
   border: 4px solid dodgerblue;
   margin: 0 auto;
-  color: white;
+  color: dodgerblue;
   width: 70%;
   display: flex;
   flex-direction: column;
@@ -23,6 +25,9 @@
   align-items: center;
   justify-content: center;
   padding: 2px;
+  position: relative;
+  z-index: 2;
+  opacity: 1;
 }
 
 h4 {

@@ -63,6 +63,8 @@ class App extends Component {
           backgroundRepeat: 'no-repeat',
           width: '90%',
           margin: "5px auto",
+          position: "absolute",
+          zIndex : "-1",
 
         }}>
         >

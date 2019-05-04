@@ -63,6 +63,44 @@ class App extends Component {
         }}>
         >
 
+        <form onSubmit = {this.handleSubmit}>
+          <div className = "smurfFormInputs">
+            <input
+              value = {this.state.name}
+              name = "name"
+              type = "text"
+              placeholder = "name"
+              onChange={this.handleChange}
+            />
+            <input
+              value = {this.state.age}
+              name = "age"
+              type = "text"
+              placeholder = "age"
+              onChange={this.handleChange}
+            />
+            <input
+              value = {this.state.height}
+              name = "height"
+              type = "text"
+              placeholder = "height"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className = "buttonContainer">
+            <button>Add NEW Smurf !!! </button>
+
+          </div>
+
+
+        </form>
+
+
+
+
+
+
+
         <div className="smurfContainer">
           <h2>SMURFS with REDUX !!!</h2>
           {this.props.smurfs.map( (smurf, index) => (

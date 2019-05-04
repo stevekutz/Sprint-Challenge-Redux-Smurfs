@@ -14,7 +14,7 @@
 
 .smurfItem {
   border: 4px solid dodgerblue;
-  margin: 2px auto;
+  margin: 0 auto;
   color: white;
   width: 70%;
   display: flex;
@@ -22,7 +22,29 @@
   align-content: center;
   align-items: center;
   justify-content: center;
-  padding: 4px;
+  padding: 2px;
+}
 
+h4 {
+  padding: .5px;
+  margin: 0;
+}
+
+.smurfFormInputs {
+  border: 2px solid rebeccapurple;;
+  margin: 2px auto;
+  display: flex;
+  width: 35%;
+  justify-content: center;
+
+
+}
+
+.buttonContainer {
+  border: 2px solid white;
+  margin: 2px auto;
+  width: 60%;
+  display: flex;
+  justify-content: center;
 
 }

@@ -1,12 +1,28 @@
 .smurfContainer {
-  border: 1px solid lightblue;
+  border: 4px solid deeppink;
   margin: 2px auto;
   display: flex;
+  width: 60%;
   flex-direction: column;
   align-content: center;
   align-items: center;
   justify-content: center;
 
+
+
+}
+
+.smurfItem {
+  border: 4px solid dodgerblue;
+  margin: 2px auto;
+  color: white;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
 
 
 }

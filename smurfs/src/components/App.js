@@ -37,7 +37,7 @@ class App extends Component {
 
     // must fill in ALL fields !!!
     if(name && age && height) {
-      this.props.addFriend({name, age, height});
+      this.props.addSmurf({name, age, height});
       this.setState({
         name: '',
         age: '',
@@ -65,12 +65,21 @@ class App extends Component {
 
         <div className="smurfContainer">
           <h2>SMURFS with REDUX !!!</h2>
+          {this.props.smurfs.map( (smurf, index) => (
+            <div
+              className = "smurfItem"
+              key = {index}
+            >
+              <h4> {smurf.name}</h4>
+              <h4> {smurf.age}</h4>
+              <h4> {smurf.height}</h4>
+            </div>
 
 
 
 
 
-
+          ))}
         </div>
 
       </div>

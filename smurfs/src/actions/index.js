@@ -29,7 +29,7 @@ export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
 export const ERROR = "ERROR";
 
 
-
+/*   BREAKS !!!
 // FOLLOW PATTERN for action creators !!!!! WATCH ENDPOINTS !!!
 export const fetchSmurfs = () => dispatch => {
   dispatch({type: FETCH_DATA_START});
@@ -41,7 +41,44 @@ export const fetchSmurfs = () => dispatch => {
         payload: res.data,
       })
     .catch(err => {
-      dispatch({type: ERROR, payload: err.response})
+      dispatch({type: ERROR, payload: err})
     })
   })
 };
+ */
+
+
+
+export const fetchSmurfs = () => dispatch => {
+  dispatch({ type: FETCH_DATA_START });
+  axios // NOTICE DIFFERENT ENDPOINT !!!!!
+    .get(`http://localhost:3333/smurfs`)
+    .then(res => {
+      dispatch({
+        type: FETCH_DATA_SUCCESS,
+        payload: res.data
+      });
+    })
+    .catch(err => {
+      dispatch({ type: ERROR, payload: err.response });
+    });
+};
+
+
+/*   ANOTHER WAY !!!
+export function fetchSmurfs() {
+  return function (dispatch) {
+    dispatch({type: FETCH_DATA_START});
+    axios.get(`http://localhost:3333/smurfs`)
+      .then(response => {
+        dispatch({
+          type: FETCH_DATA_SUCCESS,
+          payload: response.data});
+      })
+      .catch (err => {
+        dispatch({type: ERROR, payload: err});
+      })
+  }
+}
+
+ */

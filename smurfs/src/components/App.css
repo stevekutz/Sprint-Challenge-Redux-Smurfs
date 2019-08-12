@@ -1,28 +1,60 @@
-.App {
-  text-align: center;
+.smurfContainer {
+  border: 4px solid deeppink;
+  background-color: aliceblue;
+  opacity: .85;
+  margin: 2px auto;
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: -1;
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.smurfItem {
+  border: 4px solid dodgerblue;
+  margin: 0 auto;
+  color: dodgerblue;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  position: relative;
+  z-index: 2;
+  opacity: 1;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+h4 {
+  padding: .5px;
+  margin: 0;
 }
 
-.App-title {
-  font-size: 1.5em;
+.smurfFormInputs {
+  border: 2px solid rebeccapurple;;
+  margin: 2px auto;
+  display: flex;
+  width: 35%;
+  justify-content: center;
+
+
 }
 
-.App-intro {
-  font-size: large;
+.buttonContainer {
+  border: 2px solid white;
+  margin: 2px auto;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+button {
+  border: 1px solid dodgerblue;
+  border-radius: 4px;
 }
